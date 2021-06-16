@@ -24,6 +24,15 @@ class DepartmentAdd extends Component {
                 wrapperCol: { span: 20 }
             },
             formItem: [
+
+                { 
+                    type: "Upload",
+                    label: "头像", 
+                    name: "avter", 
+                    required: true, 
+                       message:'请上传'
+              
+                },
                 { 
                     type: "Input",
                     label: "部门名称", 

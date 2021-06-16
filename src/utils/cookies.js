@@ -15,6 +15,6 @@ export function getToken(){
 export function setUsername(value){
     cookies.save(user, value);
 }
-export function getUsername(){
+export function getUsername(value){
     return cookies.load(user);
 }

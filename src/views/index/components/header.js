@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { MenuFoldOutlined } from "@ant-design/icons";
 //css 
 import "./aside.scss";
+// cookie
+import {  getUsername } from "../../../utils/cookies"
 class Index extends Component {
     constructor(props){
         super(props);
@@ -26,6 +28,12 @@ class Index extends Component {
                 <h1 className="logo"><span>LOGO</span></h1>
                 <div className="header-wrap">
                     <span className="collapsed-icon" onClick={this.toggleMenu}><MenuFoldOutlined /></span>
+
+                    <div className='person'>
+                        <img src=""></img>     
+                       <span>{getUsername('username')}</span>
+
+                    </div>
                 </div>
             </div>
         )

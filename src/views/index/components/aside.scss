@@ -35,6 +35,25 @@
     -ms-transition: all .2s ease 0s;
     -o-transition: all .2s ease 0s;
     transition: all .2s ease 0s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .person{
+  
+        img{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+            display: inline-block;
+        }
+          span{
+              font-size: 12px;
+              vertical-align: middle;
+              margin-left: 10px;
+          }
+
+    }
 }
 .collapsed-icon {
     font-size: 24px;
