@@ -8,6 +8,7 @@ import requestUrl from "@api/requestUrl";
 // components
 import SelectComponent from "../select/Index";
 import UploadComponent from "../upload/index";
+import TinyEditor from "../editor/index";
 // antd
 import { Form, Input, Button, Select, InputNumber, Radio, message } from "antd";
 
@@ -23,7 +24,8 @@ class FormCom extends Component {
                 "Input": "请输入",
                 "Radio": "请选择",
                 "Select": "请选择",
-                'Upload':'请上传'
+                'Upload':'请上传',
+                'TinyEditor':'请输入'
             }
         }
     }  
@@ -110,6 +112,18 @@ class FormCom extends Component {
                 </Form.Item>
             )
         }
+
+        
+        // TinyEditor
+        TinyEditor = (item) => {
+            const rules = this.rules(item);
+            console.log(item.name)
+            return (
+                <Form.Item label={item.label} name={item.name} key={item.name} rules={[...rules, {validator: this.validatorSelect}]}>
+                    <TinyEditor  name={item.name}  />
+                </Form.Item>
+            )
+        }
     // radio
     radioElem = (item) => {
         const rules = this.rules(item);
@@ -140,6 +154,7 @@ class FormCom extends Component {
             if(item.type === "InputNumber") { formList.push(this.inputNumberElem(item)); }
             if(item.type === "Radio") { formList.push(this.radioElem(item)); }
             if(item.type === "Upload") { formList.push(this.uploadComponent(item)); }
+            if(item.type === "TinyEditor") { formList.push(this.TinyEditor(item)); }
         })
         return formList;
     }

@@ -34,6 +34,14 @@ class DepartmentAdd extends Component {
               
                 },
                 { 
+                    type: "TinyEditor",
+                    label: "图文上传", 
+                    name: "editor", 
+                    // required: true, 
+                       message:'请上传'
+              
+                },
+                { 
                     type: "Input",
                     label: "部门名称", 
                     name: "name", 
